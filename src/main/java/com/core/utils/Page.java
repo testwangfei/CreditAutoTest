@@ -23,12 +23,12 @@ import org.openqa.selenium.support.ui.Select;
 import com.core.io.ConfigUtils;
 
 public class Page {
-	private WebDriver driver;
+	protected WebDriver driver;
 	private Find find;
 	private Log log = new Log(Page.class);
 
 	public Page(WebDriver driver) {
-		String file = System.getProperty("user.dir") + "/TestResources/location/"
+		String file = System.getProperty("user.dir") + "/testresource/location/"
 				+ this.getClass().getSuperclass().getSimpleName() + ".properties";
 		Properties prop = ConfigUtils.getProperties(file);
 		this.find = new Find(driver, prop);
@@ -445,7 +445,7 @@ public class Page {
 	/**
 	 * 等待函数
 	 */
-	protected void sleep(int millis) {
+	public void sleep(int millis) {
 		try {
 			Thread.sleep(millis);
 		} catch (InterruptedException e) {
