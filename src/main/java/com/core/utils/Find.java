@@ -93,7 +93,7 @@ public class Find {
 	}
 
 	protected WebElement findElement(String locatorkey) {
-		int timeOutInSeconds = 10;
+		int timeOutInSeconds = 15;
 		return findEement(timeOutInSeconds, locatorkey);
 	}
 

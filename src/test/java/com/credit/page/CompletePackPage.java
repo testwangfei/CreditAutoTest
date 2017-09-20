@@ -18,6 +18,7 @@ public class CompletePackPage extends Page{
 		click("补充进件");	
 	}
 	
+	//姓名搜索
 	protected void searchName(String name){
 		sendKeys("搜索姓名", name);
 		click("查找");
@@ -197,15 +198,15 @@ public class CompletePackPage extends Page{
 		sendKeysByJavaScript("注册号","110120119");
 		sendKeysByJavaScript("公司类型","国有企业");
 		sendKeysByJavaScript("法定代表人",findElement("姓名").getAttribute("value"));
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
-		sendKeysByJavaScript("","");
+		sendKeysByJavaScript("企业地址",ChineseUtil.getRandom(6));
+		sendKeysByJavaScript("组成形式","股份制");
+		sendKeysByJavaScript("注册日期","2005-05-05");
+		sendKeysByJavaScript("注册资本","500");
+		sendKeysByJavaScript("经营范围","电子技术,信息技术,金融");
+		sendKeysByJavaScript("营业期限","2025-05-15");
+		sendKeysByJavaScript("登记机关","中国工商局");
+		sendKeysByJavaScript("核准日期","2010-10-10");
+		sendKeysByJavaScript("登记状态","正常营业中");
 		//备注信息
 		radioButtion("家人是否知晓此项借款");
 		radioButtion("工作证明人是否知晓此项借款");
@@ -214,9 +215,9 @@ public class CompletePackPage extends Page{
 		selectByIndex("客户从何获知", 1);
 		scrollToElement("备注信息");
 		sendKeysByJavaScript("备注信息", ChineseUtil.getRandom(300));
-		click("保存草稿");
-//		click("提交");
+//		click("保存草稿");
+		click("提交");
 		click("确定");
-		sleep(4000);
+		System.out.println("补充资料完成");
 	}
 }
