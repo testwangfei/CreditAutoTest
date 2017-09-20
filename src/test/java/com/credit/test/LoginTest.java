@@ -23,12 +23,13 @@ public class LoginTest extends InitTest{
 		CPB.complete("杨雪琴");
 	}
 	
-	
-	
-	@Test(priority=2)
+	//@Test(priority=2)
 	private void logout(){
 		LB.logout();
 	}
+	
+	
+	
 	
 	
 }

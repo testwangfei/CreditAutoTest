@@ -15,6 +15,11 @@ public class LoginPage extends Page{
 		sendKeys("用户名", username);
 		sendKeys("密码", password);
 		click("登陆");
+		if (isElementPresent(3, "确定")) {
+			click("确定");
+		}
+		
+		
 	}
 	
 	//退出登陆
