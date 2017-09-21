@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 import java.util.Set;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 import com.core.io.ConfigUtils;
 
 public class Page {
@@ -453,5 +455,30 @@ public class Page {
 			log.error("等待期间被中止" + e.toString());
 		}
 	}
+	/*
+	 * 切换页面查找所需元素
+	 */
+	public Boolean windowHandsGet(String key){
+		// 获取当前页面句柄    
+        String handle = driver.getWindowHandle();   
+		// 获取所有页面的句柄，并循环判断不是当前的句柄   
+        for (String handles : driver.getWindowHandles()) {    
+            if (handles.equals(handle))    
+                continue;    
+            driver.switchTo().window(handles); 
+            if(this.isDisplayed(key)){
+            	break;
+            }
+        }  
+		return this.isDisplayed(key);
+	}
+	
+	/*
+	 * 获取当前时间
+	 */
+	public String currentDate(){
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");//设置日期格式
+		return df.format(new Date());// new Date()为获取当前系统时间
 
+	}
 }
