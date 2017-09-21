@@ -20,7 +20,7 @@ public class RiskAuditBus extends RiskAuditPage {
 	
 	//获取终审员工编号
 	public void finalAuditPerson(String name){
-		menu_finalAuditPack();
+//		menu_finalAuditPack();
 		searchName(name);
 		finalAuditPerson();		
 	}

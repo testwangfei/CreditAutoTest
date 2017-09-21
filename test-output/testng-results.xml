@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27884" started-at="2017-09-20T09:24:50Z" finished-at="2017-09-20T09:25:18Z">
+  <suite name="Default suite" duration-ms="29069" started-at="2017-09-21T03:05:53Z" finished-at="2017-09-21T03:06:23Z">
     <groups>
       <group name="Init">
         <method signature="GetFinalAuditPersionTest.getFinalAuditPerson()[pri:1, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="getFinalAuditPerson" class="com.credit.test.GetFinalAuditPersionTest"/>
         <method signature="GetFinalAuditPersionTest.login()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="login" class="com.credit.test.GetFinalAuditPersionTest"/>
       </group> <!-- Init -->
     </groups>
-    <test name="Default test" duration-ms="27884" started-at="2017-09-20T09:24:50Z" finished-at="2017-09-20T09:25:18Z">
+    <test name="Default test" duration-ms="29069" started-at="2017-09-21T03:05:53Z" finished-at="2017-09-21T03:06:23Z">
       <class name="com.credit.test.GetFinalAuditPersionTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="setUp" is-config="true" duration-ms="1855" started-at="2017-09-20T17:24:48Z" finished-at="2017-09-20T17:24:50Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="setUp" is-config="true" duration-ms="1858" started-at="2017-09-21T11:05:52Z" finished-at="2017-09-21T11:05:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="login" duration-ms="6186" started-at="2017-09-20T17:24:50Z" finished-at="2017-09-20T17:24:56Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="login" duration-ms="7018" started-at="2017-09-21T11:05:53Z" finished-at="2017-09-21T11:06:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="FAIL" signature="getFinalAuditPerson()[pri:1, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="getFinalAuditPerson" duration-ms="21659" started-at="2017-09-20T17:24:56Z" finished-at="2017-09-20T17:25:18Z">
+        <test-method status="FAIL" signature="getFinalAuditPerson()[pri:1, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="getFinalAuditPerson" duration-ms="22006" started-at="2017-09-21T11:06:01Z" finished-at="2017-09-21T11:06:23Z">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for com.core.utils.Find$1@32115b28 (tried for 15 second(s) with 500 MILLISECONDS interval)]]>
@@ -31,7 +31,7 @@
 	at com.core.utils.Find.findEement(Find.java:49)
 	at com.core.utils.Find.findElement(Find.java:97)
 	at com.core.utils.Page.findElement(Page.java:43)
-	at com.credit.page.RiskAuditPage.finalAuditPerson(RiskAuditPage.java:133)
+	at com.credit.page.RiskAuditPage.finalAuditPerson(RiskAuditPage.java:131)
 	at com.credit.bus.RiskAuditBus.finalAuditPerson(RiskAuditBus.java:25)
 	at com.credit.test.GetFinalAuditPersionTest.getFinalAuditPerson(GetFinalAuditPersionTest.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -62,13 +62,13 @@
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"class name","selector":"datagrid-cell-c2-finalAuditPerson"}
   (Session info: chrome=60.0.3112.113)
   (Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 5.07 seconds
+Command duration or timeout: 5.02 seconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.4.0', revision: 'unknown', time: 'unknown'
 System info: host: 'EIT-20170712IIN', ip: '172.20.8.159', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_112'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\ADMINI~1.EIT\AppData\Local\Temp\scoped_dir5556_31584}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
-Session ID: 45888051f1b391b8a9b38c96e13ca13c
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.28.455520 (cc17746adff54984afff480136733114c6b3704b), userDataDir=C:\Users\ADMINI~1.EIT\AppData\Local\Temp\scoped_dir1136_23445}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, unexpectedAlertBehaviour=}]
+Session ID: 5e26cf3e98b1d704b937a1fd46bd7fc6
 *** Element info: {Using=class name, value=datagrid-cell-c2-finalAuditPerson}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -91,7 +91,7 @@ Session ID: 45888051f1b391b8a9b38c96e13ca13c
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getFinalAuditPerson -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="tearDown" is-config="true" duration-ms="719" started-at="2017-09-20T17:25:18Z" finished-at="2017-09-20T17:25:18Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.credit.test.GetFinalAuditPersionTest@6f1fba17]" name="tearDown" is-config="true" duration-ms="2970" started-at="2017-09-21T11:06:23Z" finished-at="2017-09-21T11:06:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

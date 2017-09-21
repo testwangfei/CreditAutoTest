@@ -113,8 +113,6 @@ public class RiskAuditPage extends Page{
 		click("提交");
 		click("确定");
 		
-		sleep(5000);
-		
 		
 	}
 	
