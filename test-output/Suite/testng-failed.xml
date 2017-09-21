@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test name="test(failed)" parallel="classes">
+    <groups>
+      <run>
+        <include name="Init"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.credit.test.GetFinalAuditPersionTest">
+        <methods>
+          <include name="getFinalAuditPerson"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.credit.test.GetFinalAuditPersionTest -->
+    </classes>
+  </test> <!-- test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
