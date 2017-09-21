@@ -36,7 +36,7 @@ public class RiskAuditPage extends Page{
 	protected void searchName(String name){
 		sendKeys("搜索姓名", name);
 		click("查找");
-		sleep(3000);
+		sleep(2000);
 	}
 	
 	//获取初审员工编号
@@ -127,7 +127,7 @@ public class RiskAuditPage extends Page{
 	protected void finalAuditPerson(){
 		click("派件单选框");
 		sleep(1000);
-//		if (isElementPresent(5, "终审员")) {
+		if (isElementPresent(5, "终审员")) {
 			String staff = findElement("终审员").getText();
 			sleep(1000);
 			findElements("panel-title", "系统管理").click();
@@ -138,16 +138,39 @@ public class RiskAuditPage extends Page{
 			sleep(1000);
 			sendKeysByJavaScript("员工姓名", staff);
 			click("查找");
-			sleep(1000);
+			sleep(3000);
 			String usr=findElement("工号").getText();
 			sleep(1000);
 			try {
 				TextFileUtil.outputFile(testdata.getProperty("账号临时文件"), usr);
 			} catch (IOException e) {
 				e.printStackTrace();
-//			}
+			}
 
 		}
 	}
+	
+	//终审
+	protected void FinalAudit() {
+		click("审核");
+		sleep(1000);
+		switchToWindow("和信风控系统");
+		sleep(1000);
+		click("决策信息");
+		sleep(2000);
+		sendKeys("批贷金额", testdata.getProperty("初审批准金额"));
+		sendKeysByJavaScript("内部决策描述", ChineseUtil.getRandom(80));
+		sleep(1000);
+		click("决策结果0");
+		sleep(1000);
+		findElements("combobox-item", "同意批核").click();
+		sleep(1000);
+		sendKeysByJavaScript("返回销售决策描述", ChineseUtil.getRandom(100));
+		click("提交");
+		sleep(1000);
+		click("确定");
+		sleep(1000);
+	}
+	
 	
 }

@@ -10,9 +10,7 @@
   	</groups>
  
         <classes >        
-         <class name = "com.autotest.test.NewPackTest" /> 
-         <class name = "com.autotest.test.NewCreditTest" /> 
-         <class name = "com.autotest.test.NewEvaluationTest" />          
+         <class name = "com.credit.test.GetFinalAuditPersionTest" /> 
         </classes>
     </test> <!-- Test -->
 
