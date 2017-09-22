@@ -72,39 +72,56 @@ public class SignManagePage extends Page {
 		return this.getText("通知签约列表")!= "";
 	}
 	/*
-	 * 签约
+	 * 操作：签约
+	 * 注意
+	 * 江西银行开户和绑卡：调用线上服务，注意是否服务正常
+	 * 下一步，验证电子签章，第三方服务不通时，可使用本地已签章成功的身份证db_contract库cer_request表certificate_no字段
+	 * 信贷需修改：信贷库，AuditingInfo表idCode字段
 	 */
-	public void toSign(String ID){
-		this.click("签约");
-		this.click("下一步");
-		this.click("签约渠道");
-		this.click("签约渠道_线上");
-		this.click("开户银行");
-		this.click("交通银行");
-		this.click("省");
-		this.click("北京");
-		this.click("市");
-		this.click("北京市");
-		this.click("东城区");
-		this.sendKeys("开户支行名称", "大望路");
-		this.sendKeys("银行账号", "9558820200001323771");
-		this.click("数想签约");
-		//判断数想签约是否成功
-		if(this.getText("数想签约提示")=="签约成功"){
-			System.out.println("数想签约成功！");
+	public void toSign(){
+		if(this.isDisplayed("签约")){
+			this.click("签约");
+			this.click("下一步");
+			this.click("签约渠道");
+			this.click("");
+			this.click("开户银行");
+			this.click("");
+			this.click("省");
+			this.click("");
+			this.click("市");
+			this.click("");
+			this.click("地区");
+			this.click("");
+			this.sendKeys("开户支行名称", "大望路");
+			this.sendKeys("银行账号", "");
+			this.click("数想签约");
+			if(this.getText("数想签约提示")=="签约成功"){
+				System.out.println(this.getText("数想签约提示"));
+				this.click("江西银行开户和绑卡");
+				if(this.getText("江西银行开户和绑卡提示")=="开户和绑卡成功"){
+					System.out.println(this.getText("江西银行开户和绑卡提示"));
+					this.click("证件填写_下一步");
+					System.out.println(this.getText("提示"));
+					this.click("确定");
+					this.click("合同签约_下一步");
+					this.click("批量选择文件");
+					//auto上传文件？？？？
+					this.click("开始上传");
+					this.click("提交");
+					System.out.println(this.getText("提示"));
+					this.click("确定");
+
+				}else{
+					System.out.println(this.getText("江西银行开户和绑卡提示"));
+				}
+				
+			}else{
+				System.out.println(this.getText("数想签约提示"));
+			}
 		}else{
-			System.out.println("数想签约失败！");
-			return;
+			System.out.println("此数据无签约按钮");
 		}
-		this.click("江西银行开户和绑卡");
-		//判断江西银行开户和绑卡是否成功
-		if(this.getText("江西银行开户和绑卡提示")=="开户和绑卡成功"){
-			System.out.println("江西银行开户和绑卡成功！");
-		}else{
-			System.out.println("江西银行开户和绑卡失败！");
-			return;
-		}
-		this.click("证件填写_下一步");
-		this.click("证件填写_确定");
+		
 	}
+		
 }

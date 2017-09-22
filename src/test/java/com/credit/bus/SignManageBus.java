@@ -39,6 +39,23 @@ public class SignManageBus extends SignManagePage {
 		}
 
 	}
+	/*
+	 * 签约
+	 */
+	public void SignBus(String ID){
+		super.pageInSign();
+		sleep(3000);
+		if(super.searchSign(ID)){
+			super.toSign();
+			if(!super.searchSign(ID)){
+				System.out.println("签约成功！");
+			}else{
+				System.out.println("签约失败！");
+			}
+			
+			
+		}
+	}
 
 
 }

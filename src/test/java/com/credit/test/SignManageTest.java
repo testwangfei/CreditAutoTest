@@ -32,7 +32,7 @@ public class SignManageTest extends InitTest {
 	@Test
 	private void Sign(){
 		SignManageBus SMB=new SignManageBus(driver);
-		SMB.toSign("");
+		SMB.SignBus("J201709181440207558RW");
 	}
 
 	
